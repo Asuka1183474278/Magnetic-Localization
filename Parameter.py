@@ -21,7 +21,7 @@ class MLP(nn.Module):
 
         return x
 
-net = torch.load('random_model.pkl').to(torch.device('cpu'))
+net = torch.load('random_model.pkl', map_location='cpu')
 for parameters in net.parameters():
     x = parameters.detach().numpy()
     print(parameters.shape)
